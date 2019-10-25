@@ -28,35 +28,8 @@
     width: 100%;
     position: relative;
     }
-/* 
-    .con1{
-        left: 559px;
-        color: #FFC107;
-        position: absolute;
-        top: 119px;
-    }
-    .con2{
-        color:white;
-        left: 651px;
-        color: #ffc107;
-        position: absolute;
-        top: 163px;
-    }
-    .con3{
-       
-        left: 616px;
-        color: #FFC107;
-        position: absolute;
-        top: 207px;
-    } */
-    /* .diwali{
-        color: #673AB7;
-        position: absolute;
-       
-        top: 180px;
-        text-align: center;
-        font-style: italic;
-    } */
+
+
     .diwali{
 
         position: absolute;
@@ -88,7 +61,8 @@
        
         <h1>WISH YOU</h1>
         <h1>HAPPY DIWALI</h1>
-        <h1>FROM</h1>
+		<h1>FROM</h1>
+		<% user_array.map((user_array)=>{%>
         <h1><%= user_array.user_name%></h1>
       
 
@@ -97,7 +71,8 @@
             <input type="text" class="form-control" id="copyurl" value="https://happydiwali-2k19.herokuapp.com/display/<%= user_array._id%>" aria-describedby="basic-addon1"readonly>
             <button class="btn btn-primary" onclick="copyurl()" style="margin-top:2px;" role="button">copy</button>
         </div>
-    </div>
+	</div>
+		<%}) %>
     <canvas id="canvas">Canvas is not supported in your browser.</canvas>
     <script>
    // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval

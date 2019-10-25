@@ -29,13 +29,10 @@ router.post('/create', function(req, res, next) {
 
   // store data in database!
 
-  data.save(function(err,inserted_data){
+  data.save(function(err){
     if(err){
       console.log(err + "Error in Insert Record");
     }else{
-      console.log(inserted_data+ "hi this vishal patel");
-      var id = inserted_data._id;
-      app.set('id',id);
       res.redirect('/display');
     }
   })
@@ -45,10 +42,8 @@ router.post('/create', function(req, res, next) {
 // display route
 
 router.get('/display', function(req, res, next) {
-  console.log(app.get('id')+"vishal is you get this id");
-  // var url = req.protocol+'://'+req.get('host')+req.originalUrl+'/'+app.get('id');
-  // console.log(url + "i get the url");
-  usermodel.findById(app.get('id'),function(err, db_user_array){
+  
+  usermodel.find(function(err, db_user_array){
     if(err){
       console.log(err+ "error in display data !");
     }else{
@@ -56,7 +51,7 @@ router.get('/display', function(req, res, next) {
       
       res.render('display',{user_array:db_user_array});
     }
-  })
+  }).sort({_id:-1}).limit(1);
 });
 
 router.get('/display/:id', function(req, res, next) {
