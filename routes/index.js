@@ -7,17 +7,11 @@ var router = express.Router();
 var usermodel = require('../schema/user_table');
 
 /* GET home page. */
+
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-router.get('/diwali', function(req, res, next) {
-  res.render('diwali', { title: 'Express' });
-});
-
-router.get('/create', function(req, res, next) {
   res.render('create', { title: 'Express' });
 });
+
 
 router.post('/create', function(req, res, next) {
   console.log(req.body);
