@@ -63,8 +63,7 @@
         left: 0;
         right: 0;
         margin: auto;
-        transform: translateY(-40%);
-        top: 40%;
+        top: 30%;
         font-family: 'Abril Fatface', cursive;
         text-align: center;
         color: blueviolet;
@@ -76,22 +75,20 @@
         left: 0;
         right: 0;
         margin: auto;
-        transform: translateY(-90%);
-        top: 90%;
+        top: 70%;
         width: 60%;
         z-index: 2;
     }
     @media (max-width: 575.98px) { 
         .vishal{
-        transform: translateY(-30%);
-        top: 90%;
+        top: 100%;
         width:40%;
         }
      }
     @media (min-width: 576px) and (max-width: 768px) { 
         .vishal{
-        transform: translateY(-30%);
-        top: 90%;
+    
+        top: 100%;
         width:40%;
         }
     }
@@ -132,11 +129,11 @@
         
                 <div class="form-group">
                     <label for="Name" style="color: white;" >Enter Your Name:</label>
-                    <input type="text" class="form-control m-2" id="name" name="username" placeholder="Enter Your Name">
+                    <input type="text" class="form-control m-2" id="name" name="username" pattern="[A-Z]+" title="only contains capital latters" placeholder="Enter Your Name"required >
                 </div>
                 <div class="form-group">
                         <label for="Contact" style="color: white;">Contact No:</label>
-                        <input type="number" class="form-control m-2" id="Contact" name="contact" placeholder="Enter Your Contact Number">
+                        <input type="text" class="form-control m-2" id="Contact" name="contact" pattern="[0-9]{10}" title="only contains 10 digit number" placeholder="Enter Your Contact Number" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
         

@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //db connection start
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/diwali', {useNewUrlParser: true})
+mongoose.connect('mongodb+srv://root:vishal@cluster0-3kodu.mongodb.net/diwaliusers?retryWrites=true&w=majority', {useNewUrlParser: true})
 .then(()=> console.log('connection successfull'))
 .catch((err)=> console.error(err))
 
